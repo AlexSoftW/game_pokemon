@@ -11,16 +11,16 @@ function start() {
    personagem = document.getElementById("personagem");
    eixoX = 0;
    eixoY = 0;
-   positionX = 105;
-   positionY = 360;
+   positionX = 115;
+   positionY = 370;
    velocidade = 0.5;
 
    // Tempo de FPS por seg (quanto menor for o num, mais linear fica a movimentação)
    tempo = setInterval(enterFrame, 1);
 
    //POKEMON
-   pokemonX = 400;
-   pokemonY = 40;
+   pokemonX = 410;
+   pokemonY = 50;
 
    document.addEventListener("keydown", teclaDown);
    document.addEventListener("keyup", teclaUp);
@@ -82,23 +82,23 @@ function verificarColisao() {
    // var validar_eixoX = positionX > 250 && positionX < 400
    // var validar_eixoY = positionY > 250 && positionY < 400
 
-   var validar_eixoX = positionX > pokemonX - 50 && positionX < pokemonX + 50;
-   var validar_eixoY = positionY > pokemonY - 50 && positionY < pokemonY + 50;
+   var validar_eixoX = positionX > pokemonX - 30 && positionX < pokemonX + 30;
+   var validar_eixoY = positionY > pokemonY - 30 && positionY < pokemonY + 30;
 
    if (validar_eixoX && validar_eixoY) {
       console.log("!!!!Encostou!!!!");
    }
 }
 
-function brotarPokemon(){
+// function brotarPokemon(){
 
-   setInterval(() => {
-      pokemonX = Math.floor(Math.random() * 600 + 1);
-      pokemonY = Math.floor(Math.random() * 600 + 1);
-      pokemon.style.left = pokemonX + "px";
-      pokemon.style.top = pokemonY + "px";
-   }, 5000);
+//    setInterval(() => {
+//       pokemonX = Math.floor(Math.random() * 600 + 1);
+//       pokemonY = Math.floor(Math.random() * 600 + 1);
+//       pokemon.style.left = pokemonX + "px";
+//       pokemon.style.top = pokemonY + "px";
+//    }, 5000);
 
-}
+// }
 
 window.addEventListener("load", start);
