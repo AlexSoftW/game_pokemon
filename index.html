@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pokémon</title>
+</head>
+<body>
+<!-- <body onload="brotarPokemon()"> -->
+   <div class="painel">
+      <div id="dv1">
+         <img src="char/ash_frente_gif.gif">
+      </div>
+      <div id="pokemon">
+         <img src="pokemon/pikachu.gif">
+      </div>
+   </div>
+</body>
+</html>
+<script>
+
+   var eixoX, eixoY, positionX, positionY
+   var velocidade, tempo;
+   var personagem;
+
+   var pokemonX = 430;
+   var pokemonY = 150;
+
+   function start(){
+
+      eixoX = 0;
+      eixoY = 0;
+      positionX = 0;
+      positionY = 0;
+      velocidade = 0.5;
+
+      personagem = document.getElementById('dv1');
+
+      tempo = setInterval(enterFrame, 1);
+
+      document.addEventListener("keydown", teclaDown);
+      document.addEventListener("keyup", teclaUp);
+   }
+
+
+   function teclaUp(){
+      var tecla = event.keyCode;
+      // 37 = Esquerda, 38 = Cima, 39 = Direita e 40 = Baixo
+      if(tecla == 37){
+         eixoX = 0;
+      } else if(tecla == 38){
+         eixoY = 0;
+      } else if(tecla == 39){
+         eixoX = 0;
+      } else if(tecla == 40){
+         eixoY = 0;
+      }
+   }
+
+   function teclaDown(){
+      var tecla = event.keyCode;
+      // 37 = Esquerda, 38 = Cima, 39 = Direita e 40 = Baixo
+      if(tecla == 37){
+         eixoX = -1;
+      } else if(tecla == 38){
+         eixoY = -1;
+      } else if(tecla == 39){
+         eixoX = 1;
+      } else if(tecla == 40){
+         eixoY = 1;
+      }
+   }
+
+
+   function enterFrame(){
+      positionX += eixoX * velocidade;
+      positionY += eixoY * velocidade;
+      personagem.style.left = positionX + "px";
+      personagem.style.top = positionY + "px";   
+
+      pokemon.style.left = pokemonX + "px";
+      pokemon.style.top = pokemonY + "px";
+
+      verificarColisao()
+   }
+
+   function verificarColisao(){
+      
+      // var validar_eixoX = positionX == pokemonX - 100 || positionX == pokemonX + 50
+      // var validar_eixoY = positionY == pokemonY - 100 || positionY == pokemonY + 50
+
+      // var validar_eixoX = positionX > 250 && positionX < 400
+      // var validar_eixoY = positionY > 250 && positionY < 400
+
+      var validar_eixoX = positionX > pokemonX - 50 && positionX < pokemonX + 50;
+      var validar_eixoY = positionY > pokemonY - 50 && positionY < pokemonY + 50;
+      
+      if(validar_eixoX && validar_eixoY){
+         console.log('!!!!Encostou!!!!')
+      }
+   }
+
+   // function brotarPokemon(){
+      
+   //    setInterval(() => {
+   //       pokemonX = Math.floor(Math.random() * 500 + 1);
+   //       pokemonY = Math.floor(Math.random() * 500 + 1);
+
+   //       pokemon.style.left = pokemonX + "px";
+   //       pokemon.style.top = pokemonY + "px";
+   //    }, 5000);
+
+   // }
+
+   window.addEventListener("load", start);
+
+</script>
+
+
+
+<style>
+   *{
+      margin: 0;
+      padding: 0;
+   }
+
+   body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   .painel{
+      height: 650px;
+      width: 850px;
+      border: 1px solid black;
+      background-image: url("maps/background.webp");
+      background-size: contain;
+   }
+
+  #dv1{
+   width: 50px;
+   height: 50px;
+   border: 1px solid #000;
+   background-color: rgb(0, 72, 255);
+   position: absolute;
+   left: 0px;
+   top: 0px;
+  }
+
+  #dv1 img{
+   width: 50px;
+  }
+
+  #pokemon{
+   width: 50px;
+   height: 50px;
+   border: 1px solid black;
+   background-color: red;
+   position: absolute;
+  }
+</style>
