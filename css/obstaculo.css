@@ -1,0 +1,48 @@
+.group_obstaculo{
+    text-align: center;
+}
+
+.obs1{
+    border: 2px solid red;
+    position: absolute;
+    top: 590px;
+    left: 295px;
+    width: 555px;
+    height: 55px;
+ }
+
+ .obs2{
+    border: 2px solid red;
+    position: absolute;
+    top: 600px;
+    left: 55px;
+    width: 190px;
+    height: 50px;
+ }
+
+ .obs3{
+    border: 2px solid red;
+    position: absolute;
+    top: 45px;
+    left: 50px;
+    width: 35px;
+    height: 600px;
+ }
+
+ .obs4{
+    border: 2px solid red;
+    position: absolute;
+    top: 45px;
+    left: 50px;
+    width: 800px;
+    height: 30px;
+ }
+
+ .obs5{
+    border: 2px solid red;
+    position: absolute;
+    top: 45px;
+    left: 800px;
+    width: 50px;
+    height: 600px;
+ }

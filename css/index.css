@@ -48,18 +48,3 @@ body {
    width: 50%;
    min-width: 45px;
 }
-
-.group_obstaculo{
-   width: 100%;
-   height: 100%;
-   border: 2px solid blue;
-}
-
-.obs1{
-   border: 2px solid red;
-   position: absolute;
-   top: 590px;
-   left: 295px;
-   width: 555px;
-   height: 55px;
-}

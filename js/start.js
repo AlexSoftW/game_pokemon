@@ -6,13 +6,13 @@ function start() {
    personagem = document.getElementById("personagem");
    eixoX = 0;
    eixoY = 0;
-   positionX = 115;
-   positionY = 370;
+   positionX = 145;
+   positionY = 405;
    velocidade = 0.5;
 
    //POKEMON
-   pokemonX = 410;
-   pokemonY = 50;
+   pokemonX = 430;
+   pokemonY = 100;
 
    //MOVIMENTAÇÃO
    document.addEventListener("keydown", teclaDown);
