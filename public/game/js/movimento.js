@@ -98,6 +98,8 @@ function obstaculo(){
    obs9Coor = obs9.getBoundingClientRect();
    obs10Coor = obs10.getBoundingClientRect();
    obs11Coor = obs11.getBoundingClientRect();
+
+   console.log(obs2Coor); 
 }
 
 function validar_esquerda(){

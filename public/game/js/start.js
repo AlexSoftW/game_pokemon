@@ -8,13 +8,9 @@ function start() {
    personagem = document.getElementById("personagem");
    eixoX = 0;
    eixoY = 0;
-   positionX = 750;
-   positionY = 158;
+   positionX = 200;
+   positionY = 198;
    velocidade = 0.4;
-
-   //POKEMON
-   pokemonX = 150;
-   pokemonY = 540;
 
    //MOVIMENTAÇÃO
    document.addEventListener("keydown", teclaDown);
@@ -31,9 +27,6 @@ function enterFrame() {
    personagem.style.left = positionX + "px";
    personagem.style.top = positionY + "px";
 
-   pokemon.style.left = pokemonX + "px";
-   pokemon.style.top = pokemonY + "px";
-
    verificarColisao();
 }
 
@@ -49,6 +42,5 @@ function enterFrame() {
 //       tempo.innerHTML = `Min: ${minuto} | Seg: ${seg}`;
 //    }
 // }
-
 
 window.addEventListener("load", start);
