@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="imagem/png" href="../assets/icons/pokeball.jpg" />
+   <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="css/obstaculo.css">
+   <title>Pokémon</title>
+</head>
+<body>
+<body onload="obstaculo()">
+   <section class="map" id="map">
+      <div id="group_obstaculo" class="group_obstaculo">
+         <!-- Extremidades do mapa -->
+         <div class="obs1" id="obs1"></div>
+         <div class="obs2" id="obs2"></div>
+         <div class="obs3" id="obs3"></div>
+         <div class="obs4" id="obs4"></div>
+         <div class="obs5" id="obs5"></div>
+         <div class="obs6" id="obs6"></div>
+         <!-- Lago -->
+         <div class="obs7" id="obs7"></div>
+         <div class="obs9" id="obs9"></div>
+         <!-- casa && floresta -->
+         <div class="obs10" id="obs10"></div>
+         <div class="obs11" id="obs11"></div>
+      </div>
+      <div id="personagem">
+         <img src="assets/char/ash_frente.png">
+      </div>
+      <div id="pokemon">
+         <img src="assets/pokemon/pikachu.gif">
+      </div>
+   </section>
+
+   <!-- <section class="cronometro">
+      <div id="tempo">Min: 2 | Seg: 0</div>
+   </section> -->
+</body>
+</html>
+<script src="js/start.js"></script>
+<script src="js/movimento.js"></script>
+<script src="js/pokemon.js"></script>
