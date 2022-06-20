@@ -28,7 +28,7 @@ setInterval(() => {
 function voltar_home(){
    if(positionX >= 310 && positionX <= 355 && positionY > 620){
       console.log('saiu')
-      window.location = '../index.html'
+      window.location = '../treinador/index.html'
    }
 }
 
@@ -56,7 +56,6 @@ function teclaUp() {
 
 function teclaDown() {
    var tecla = event.keyCode;
-
    // 37 = Esquerda | 38 = Cima | 39 = Direita | 40 = Baixo
    if (tecla == 37) {
       pressEsq = 1;
@@ -99,7 +98,7 @@ function obstaculo(){
    obs10Coor = obs10.getBoundingClientRect();
    obs11Coor = obs11.getBoundingClientRect();
 
-   console.log(obs2Coor); 
+   // console.log(obs2Coor); 
 }
 
 function validar_esquerda(){

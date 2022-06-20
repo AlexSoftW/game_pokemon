@@ -5,12 +5,11 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="icon" type="imagem/png" href="../assets/icons/pokeball.jpg" />
-   <link rel="stylesheet" href="css/index.css">
+   <link rel="stylesheet" href="css/game.css">
    <link rel="stylesheet" href="css/obstaculo.css">
    <title>Pokémon</title>
 </head>
-<body>
-<body onload="obstaculo(), brotarPokemon()">
+<body onload="obstaculo(), temporizador()">
    <section class="map" id="map">
       <div id="group_obstaculo" class="group_obstaculo">
          <!-- Extremidades do mapa -->
@@ -24,8 +23,8 @@
          <div class="obs7" id="obs7"></div>
          <div class="obs9" id="obs9"></div>
          <!-- casa && floresta -->
-         <div class="obs10" id="obs10">></div>
-         <div class="obs11" id="obs11">></div>
+         <div class="obs10" id="obs10"></div>
+         <div class="obs11" id="obs11"></div>
       </div>
       <div id="personagem">
          <img src="assets/char/ash_frente.png">
@@ -35,9 +34,11 @@
       </div>
    </section>
 
-   <!-- <section class="cronometro">
-      <div id="tempo">Min: 2 | Seg: 0</div>
-   </section> -->
+   <section class="cronometro">
+      <div id="tempo">Min: 1 | Seg: 10</div>
+      <a href="../treinador/index.html">voltar</a>
+   </section>
+
 </body>
 </html>
 <script src="js/start.js"></script>
