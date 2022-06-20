@@ -1,12 +1,16 @@
 // VARIAVEIS DO POKEMON
-var idPokemon = 0;
+var idPokemon1 = 0;
+var idPokemon2 = 0;
+var idPokemon3 = 0;
+
 var pokemonX = 0;
 var pokemonY = 0;
 var nomePokemon = '';
+var probabilidade = 0;
 
 //TEMPORIZADOR
 var minuto = 1;
-var segundo = 10;
+var segundo = 5;
 var validar30s = 0;
 
 // Função para validar se o treinador chegou perto do pokémon
@@ -15,6 +19,7 @@ function verificarColisao() {
    var validar_eixoY = positionY > pokemonY - 30 && positionY < pokemonY + 30;
 
    if (validar_eixoX && validar_eixoY) {
+      window.location = "capturar.html"
       console.log("!!!!Encostou!!!!");
    }
 }
@@ -47,14 +52,29 @@ function validar_respaw(){
 // Função para verificar qual o próximo pokemon vai respawnar
 function brotarPokemon(){
    validar_respaw();
-   if(idPokemon == 1){
-      nomePokemon = 'Bulbasaur'
-   } else if(idPokemon == 2){
-      nomePokemon = 'Charmander'
-   } else if(idPokemon == 3){
-      nomePokemon = 'Squirtle'
+
+   if(probabilidade >= 1 && probabilidade < 70){
+      //1 FASE
+      idPokemon1 = Math.floor(Math.random() * 3 + 1);
+      primeira_fase();
+      pokemon.innerHTML = `<img src="assets/pokemon/${nomePokemon}.gif" >`;
+
+   }else if(probabilidade >= 70 && probabilidade < 90){
+      //2 FASE
+      idPokemon2 = Math.floor(Math.random() * 3 + 1);
+      segunda_fase();
+      pokemon.innerHTML = `<img src="assets/pokemon/${nomePokemon}.gif" style="width: 50px;">`;
+
+   }else if(probabilidade >= 90 && probabilidade < 100){
+      //3 FASE
+      idPokemon3 = Math.floor(Math.random() * 3 + 1);
+      terceira_fase();
+      pokemon.innerHTML = `<img src="assets/pokemon/${nomePokemon}.gif" style="width: 60px;">`;
+
+   }else if(probabilidade == 100){
+      //LENDARIO
    }
-   pokemon.innerHTML = `<img src="assets/pokemon/${nomePokemon}.gif">`;
+
 }
 
 // Função para cronometrar o respawn dos pokémon
@@ -63,16 +83,19 @@ function temporizador(){
       sessionStorage.setItem('min', minuto)
       sessionStorage.setItem('seg', segundo);
       if(minuto != 0 && segundo <= -1){
-         segundo = 10;
+         segundo = 5;
          minuto = 0;
 
       } else if(minuto == 0 && segundo <= -1){
          brotarPokemon();
 
          if(validar30s == 0){
-            idPokemon = Math.floor(Math.random() * 3 + 1);
-            console.log(idPokemon);
-            segundo = 15;
+            setTimeout(() => {
+               probabilidade = Math.floor(Math.random() * 100 + 1);
+            }, 1500);
+            
+            console.log(probabilidade);
+            segundo = 5;
             minuto = 0;
 
             validar30s = 1;
@@ -82,7 +105,7 @@ function temporizador(){
             pokemon.innerHTML = ""
             
          }else if(validar30s == 1){
-            segundo = 10;
+            segundo = 5;
             minuto = 1;
             validar30s = 0;
             // brotarPokemon();
@@ -96,6 +119,60 @@ function temporizador(){
       }
    }, 1000);
 
+}
+
+// Função para alternar entre as fases de evolução
+
+function primeira_fase(){
+   if(idPokemon1 == 1){
+      nomePokemon = 'Bulbasaur';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   } else if(idPokemon1 == 2){
+      nomePokemon = 'Charmander';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   } else if(idPokemon1 == 3){
+      nomePokemon = 'Squirtle';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   }
+}
+
+function segunda_fase(){
+   if(idPokemon2 == 1){
+      nomePokemon = 'Ivysaur';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   } else if(idPokemon2 == 2){
+      nomePokemon = 'Charmeleon';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   } else if(idPokemon2 == 3){
+      nomePokemon = 'Wartortle';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   }
+}
+
+function terceira_fase(){
+   if(idPokemon3 == 1){
+      nomePokemon = 'Venusaur';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   } else if(idPokemon3 == 2){
+      nomePokemon = 'Charizard';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   } else if(idPokemon3 == 3){
+      nomePokemon = 'Blastoise';
+      sessionStorage.setItem('idPoke', nomePokemon);
+
+   }
+}
+
+function lendario(){
+// aqui vai ficar o id do MEW!!
 }
 
 

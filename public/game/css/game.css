@@ -50,8 +50,7 @@ body {
    left: 120px; */
 }
 #pokemon img{
-   width: 30%;
-   min-width: 30px;
+   width: 30px;
 }
 
 .cronometro{

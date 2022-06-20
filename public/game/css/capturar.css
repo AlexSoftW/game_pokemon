@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+.main .container1{
+    width: 60%;
+    border: 1px solid red;
+    background-image: url('../assets/maps/capturar.png');
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.main .container2{
+    width: 40%;
+    border: 1px solid blue;
+}
+
+.container2 .header{
+    width: 100%;
+    height: 10%;
+    background-color: #2d2d2d;
+}
+
+.container2 .group_itens{
+    display: flex;
+    height: 90%;
+    border: 1px solid red;
+}
+
+.group_itens .bag{
+    width: 30%;
+    border: 1px solid blue;
+}
+
+.group_itens .info_pokemon{
+    width: 70%;
+    border: 1px solid red;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/capturar.css">
+    <title>Capturar</title>
+</head>
+<body onload="validar_getPokemon()">
+    <section class="main">
+        <div class="container1"></div>
+        <div class="container2">
+            <div class="header">
+                <button onclick="sair_game()">Sair</button>
+            </div>
+            <div class="group_itens">
+                <div class="bag"></div>
+                <div class="info_pokemon"></div>
+            </div>
+           
+        </div>
+    </section>
+    
+</body>
+</html>
+<script>
+    var getPokemon = sessionStorage.getItem('idPoke');
+    var nomePokemon = '';
+
+   function validar_getPokemon(){
+        if(getPokemon == 'Bulbasaur'){
+            nomePokemon = getPokemon;
+
+        }else if(getPokemon == 'Ivysaur'){
+            nomePokemon = getPokemon;
+
+        }else if(getPokemon == 'Venusaur'){
+            nomePokemon = getPokemon;
+
+        }else if(getPokemon == 'Charmander'){
+            nomePokemon = getPokemon;
+
+        }else if(getPokemon == 'Charmeleon'){
+            nomePokemon = getPokemon;
+
+        }else if(getPokemon == 'Charizard'){
+            nomePokemon = getPokemon;
+
+        }else if(getPokemon == 'Squirtle'){
+            nomePokemon = getPokemon;
+
+        }else if(getPokemon == 'Wartortle'){
+            nomePokemon = getPokemon;
+
+        }else if(getPokemon == 'Blastoise'){
+            nomePokemon = getPokemon;
+
+        }
+   }
+
+   function sair_game(){
+    sessionStorage.clear('idPoke');
+    window.location = 'game.html';
+   }
+
+    
+</script>
