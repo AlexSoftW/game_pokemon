@@ -9,26 +9,50 @@
 </head>
 <body onload="validar_getPokemon()">
     <section class="main">
-        <div class="container1"></div>
-        <div class="container2">
-            <div class="header">
-                <button onclick="sair_game()">Sair</button>
+        <div class="group_container">
+            <div class="container_1">
+                <div class="map">
+                    <div class="status">
+                        <img src="../assets/icons/pixel_pokeball.jpg" class="img_pokeball">
+                        <p id="p_pokemon"></p>
+                        <img src="assets/maps/status.png">
+                    </div>
+                    <div class="base">
+                        <img src="assets/maps/base.png">
+                    </div>
+                    <div id="treinador_game">
+                        <img src="../assets/treinador/boy_game.png">
+                    </div>
+                    <div id="pokemon_game">
+                        <!-- <img src="assets/pokemon/Pikachu.gif"> -->
+                    </div>
+                    
+                </div>
+                <div class="log">
+                    <img src="assets/log/padrao.png">
+                </div>
             </div>
-            <div class="group_itens">
+            <div class="container_2">
                 <div class="bag"></div>
-                <div class="info_pokemon"></div>
+                <div class="sair">
+                    <button onclick="sair_game()">Sair</button>
+                </div>
             </div>
-           
         </div>
     </section>
     
 </body>
 </html>
+<!-- <script src="js/pokemon.js"></script> -->
 <script>
     var getPokemon = sessionStorage.getItem('idPoke');
     var nomePokemon = '';
+    var getProbabilidade = sessionStorage.getItem('probabilidade');
+    var alturaPokemon = 0;
 
    function validar_getPokemon(){
+        validar_altura_pokemon();
+
         if(getPokemon == 'Bulbasaur'){
             nomePokemon = getPokemon;
 
@@ -55,14 +79,25 @@
 
         }else if(getPokemon == 'Blastoise'){
             nomePokemon = getPokemon;
-
         }
+
+        pokemon_game.innerHTML = `<img src="assets/pokemon/capturar/${nomePokemon}.gif" style="width:${alturaPokemon}%">`;
+        p_pokemon.innerHTML = nomePokemon;
    }
 
    function sair_game(){
-    sessionStorage.clear('idPoke');
-    window.location = 'game.html';
+        sessionStorage.clear('idPoke');
+        window.location = 'game.html';
    }
 
+   function validar_altura_pokemon(){
+        if(getProbabilidade >= 1 && getProbabilidade < 75){
+            alturaPokemon = 40;
+        }else if(getProbabilidade >= 75 && getProbabilidade < 90){
+            alturaPokemon = 75;
+        }else if(getProbabilidade >= 90 && getProbabilidade < 100){
+            alturaPokemon = 120;
+        }
+   }
     
 </script>

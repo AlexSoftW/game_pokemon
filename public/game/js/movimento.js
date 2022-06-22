@@ -4,6 +4,10 @@ var velocidade;
 var positionX, positionY;
 var eixoX, eixoY;
 
+// VARIAVEIS PARA VALIDAR SE O USUARIO TEM UMA BIKE OU NÃO!
+var bike;
+var charEsquerda, charCima, charDireita, charBaixo;
+
 // VARIAVEIS DAS COORDENADAS DOS OBSTACULOS
 var obs1Coor, obs2Coor, obs3Coor, obs4Coor, obs5Coor,
       obs6Coor, obs7Coor, obs9Coor, obs10Coor, 
@@ -25,13 +29,7 @@ setInterval(() => {
    }
 }, 1);
 
-function voltar_home(){
-   if(positionX >= 310 && positionX <= 355 && positionY > 620){
-      console.log('saiu')
-      window.location = '../treinador/index.html'
-   }
-}
-
+// Soltar a tecla
 function teclaUp() {
    var tecla = event.keyCode;
    // 37 = Esquerda | 38 = Cima | 39 = Direita | 40 = Baixo
@@ -54,6 +52,7 @@ function teclaUp() {
    }
 }
 
+// Apertar a tecla
 function teclaDown() {
    var tecla = event.keyCode;
    // 37 = Esquerda | 38 = Cima | 39 = Direita | 40 = Baixo
@@ -164,3 +163,30 @@ function validar_baixo(){
    }
 }
 
+// BIKE
+function bike_ash(){
+   bike = document.getElementById('check_bike');
+
+      if(bike.checked == true){
+         console.log('ativado')
+         charEsquerda = 'ash_bike_esq';
+         charCima = 'ash_bike_costas';
+         charDireita = 'ash_bike_dir';
+         charBaixo = 'ash_bike_frente';
+      }else{
+         console.log('não ativado')
+         charEsquerda = 'ash_esq';
+         charCima = 'ash_costas';
+         charDireita = 'ash_dir';
+         charBaixo = 'ash_frente';
+      }
+}
+
+
+// Após sair pela parte de baixo do mapa
+function voltar_home(){
+   if(positionX >= 310 && positionX <= 355 && positionY > 620){
+      console.log('saiu')
+      window.location = '../treinador/index.html'
+   }
+}

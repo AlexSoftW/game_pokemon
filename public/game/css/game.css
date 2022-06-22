@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa&display=swap");
+
 * {
    margin: 0;
    padding: 0;
@@ -7,14 +9,36 @@
 body {
    padding: 50px;
    display: flex;
-   gap: 10px;
+   gap: 25px;
    flex-wrap: wrap;
+   background-image: url('../../assets/background/waves2.svg');
+   background-size: cover;
+   font-family: 'Changa', sans-serif;
 }
 
+a {
+   text-decoration: none;
+   color: black;
+}
+
+/* LOGO */
+.logo{
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 3px;
+   width: 93%;
+}
+.logo img{
+   width: 8%;
+   min-width: 100px;
+}
+
+/* GAME */
 .map {
    height: 600px;
    width: 800px;
-   border: 3px solid orangered;
    background-image: url("../assets/maps/main_map.png");
    background-size: cover;
    background-repeat: no-repeat;
@@ -50,11 +74,111 @@ body {
    left: 120px; */
 }
 #pokemon img{
-   width: 30px;
+   width: 50px;
 }
 
-.cronometro{
-   border: 2px solid blue;
-   width: 25%;
-   height: 250px;
+/* MENU(itens) */
+.main_itens{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 10%;
+   min-width: 100px;
+   background-color: #b09386e9;
+   border: 2px solid #512f2de9;
+   border-radius: 4px;
+}
+
+.bag{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 30%;
+}
+.bag img{
+   width: 70%;
+}
+.bag p{
+   font-size: 25px;
+   font-weight: bolder;
+}
+
+.itens{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 15%;
+}
+.itens img{
+   width: 30%;
+}
+
+.hr_focus{
+   height: 4px;
+   width: 80%;
+   border: none;
+   border-radius: 5px;
+   background: linear-gradient(to left, #b36b4a, #b6836b, #b29384);
+}
+
+.sair{
+   width: 100%;
+}
+.sair a{
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
+
+/* TABELA */
+.main_pokemon{
+   width: 30%;
+   min-height: 350px;
+   background-color: white;
+}
+
+.banner_table{
+   width: 100%;
+   height: 60px;
+   background-color: slateblue;
+}
+.banner_table td{
+   text-align: center;
+   width: 33%;
+}
+
+.info_table{
+   width: 100%;
+}
+.info_table td{
+   text-align: center;
+   width: 33%;
+}
+
+/* TEMPORIZADOR */
+#cronometro{
+   position: absolute;
+   left: 85px;
+   top: 95px;
+   padding: 5px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 185px;
+   height: 40px;
+   font-size: 20px;
+   background-color: #2d2d2da3;
+   color: white;
+   border: 2px solid rgba(0, 0, 0, 0.293);
+   border-radius: 3px;
+}
+
+#cronometro img{
+   width: 30px;
 }

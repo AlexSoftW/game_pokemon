@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -6,41 +8,134 @@
 
 .main{
     display: flex;
-    min-height: 100vh;
-    min-width: 100%;
+    background-image: url('../../assets/background/waves2.svg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 
-.main .container1{
-    width: 60%;
-    border: 1px solid red;
-    background-image: url('../assets/maps/capturar.png');
-    object-fit: cover;
-    background-repeat: no-repeat;
-}
-
-.main .container2{
-    width: 40%;
-    border: 1px solid blue;
-}
-
-.container2 .header{
-    width: 100%;
-    height: 10%;
-    background-color: #2d2d2d;
-}
-
-.container2 .group_itens{
+.group_container{
+    flex-wrap: wrap;
     display: flex;
-    height: 90%;
+    gap: 25px;
+    width: 80%;
+    margin: auto;
+}
+
+.container_1{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 600px;
+    min-width: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+    /* border: 1px solid red; */
+}
+
+.container_1 .map{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    background-image: url('../assets/maps/main_map_catch.png');
+    background-size: cover;
+    /* border: 1px solid blue; */
+}
+
+.map .status{
+    /* border: 1px solid red; */
+    position: relative;
+    width: 50%;
+    left: 2%;
+    top: 2%;
+}
+.status p{
+    position: absolute;
+    top: 29%;
+    left: 30%;
+    font-family: 'Play', sans-serif;
+    font-size: 26px;
+    font-weight: bolder;
+    color: #2a2a2a;
+}
+.status .img_pokeball{
+    top: 31%;
+    left: 22%;
+    position: absolute;
+    width: 25px;
+    opacity: 80%;
+}
+
+.map .base{
+    /* border: 1px solid red; */
+    position: relative;
+    left: 55%;
+    top: 15%;
+    width: 40%;
+    z-index: +1;
+}
+
+#treinador_game{
+    position: relative;
+    width: 300px;
+    bottom: 22%;
+    left: 5%;
+    /* border: 1px solid blue; */
+}
+#treinador_game img{
+    width: 50%;
+}
+
+#pokemon_game{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: relative;
+    left: 63%;
+    bottom: 66%;
+    width: 200px;
+    min-height: 100px;
+    z-index: +1;
+    /* border: 1px solid blue; */
+}#pokemon_game img{
+    width: 40%;
+}
+
+.container_1 .log{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    background-color: #395167;
+}
+.log img{
+    width: 80%;
+    height: 100%;
+}
+
+/* LADO DIREITO(BAG) */
+.container_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    min-width: 250px;
+    min-height: 400px;
+    padding: 15px;
+    background-color: white;
     border: 1px solid red;
 }
 
-.group_itens .bag{
-    width: 30%;
-    border: 1px solid blue;
+.bag{
+    width: 100%;
+    height: 70%;
+    border: 1px solid red;
 }
 
-.group_itens .info_pokemon{
-    width: 70%;
+.sair{
+    width: 100%;
+    height: 20%;
     border: 1px solid red;
 }

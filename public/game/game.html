@@ -9,7 +9,16 @@
    <link rel="stylesheet" href="css/obstaculo.css">
    <title>Pokémon</title>
 </head>
-<body onload="obstaculo(), temporizador()">
+<body onload="obstaculo(), temporizador(), bike_ash()">
+   <div class="logo">
+      <img src="../assets/icons/pokemon.webp">
+   </div>
+
+   <section id="cronometro">
+      <img src="../assets/icons/gif/loading-timer.gif">
+      <p>Min: 1 | Seg: 5</p>
+   </section>
+
    <section class="map" id="map">
       <div id="group_obstaculo" class="group_obstaculo">
          <!-- Extremidades do mapa -->
@@ -34,9 +43,54 @@
       </div>
    </section>
 
-   <section class="cronometro">
-      <div id="tempo">Min: 1 | Seg: 10</div>
-      <a href="../treinador/index.html">voltar</a>
+   <section class="main_itens">
+      <div class="bag">
+         <img src="../assets/icons/bag.png">
+         <p>Bag</p>
+         <hr class="hr_focus">
+      </div>
+      <div class="itens">
+         <p>Pokebolas</p>
+         <img src="../assets/icons/bag_pokeball.png">
+         <p>32 unidades</p>
+      </div>
+      <div class="itens">
+         <p>Bike</p>
+         <img src="../assets/icons/bike.png">
+         <input type="checkbox" id="check_bike">
+      </div>
+      <div class="itens">
+         <p>PokeCoins</p>
+         <img src="../assets/icons/coin.png">
+         <p>15.5k</p>
+      </div>
+      <div class="sair">
+         <a href="../treinador/index.html">
+            <img src="../assets/icons/sair.png">
+         </a>
+      </div>
+   </section>
+
+   <section class="main_pokemon">
+      <table class="banner_table">
+         <tr>
+            <td>Pokemon</td>
+            <td>Data</td>
+            <td>Status</td>
+         </tr>
+      </table>
+      <table class="info_table">
+         <tr>
+            <td>Pikachu</td>
+            <td>22/06/2022 13:00</td>
+            <td>Capturado</td>
+         </tr>
+         <tr>
+            <td>Charizard</td>
+            <td>22/06/2022 15:00</td>
+            <td>Fugiu</td>
+         </tr>
+      </table>
    </section>
 
 </body>

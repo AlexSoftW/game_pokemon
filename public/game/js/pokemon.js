@@ -1,11 +1,10 @@
 // VARIAVEIS DO POKEMON
-var idPokemon1 = 0;
-var idPokemon2 = 0;
-var idPokemon3 = 0;
-
 var pokemonX = 0;
 var pokemonY = 0;
 var nomePokemon = '';
+var idPokemon1 = 0;
+var idPokemon2 = 0;
+var idPokemon3 = 0;
 var probabilidade = 0;
 
 //TEMPORIZADOR
@@ -53,76 +52,79 @@ function validar_respaw(){
 function brotarPokemon(){
    validar_respaw();
 
-   if(probabilidade >= 1 && probabilidade < 70){
+   if(probabilidade >= 1 && probabilidade < 75){
       //1 FASE
       idPokemon1 = Math.floor(Math.random() * 3 + 1);
       primeira_fase();
-      pokemon.innerHTML = `<img src="assets/pokemon/${nomePokemon}.gif" >`;
+      pokemon.innerHTML = `<img src="assets/pokemon/respawn/${nomePokemon}.gif" >`;
 
-   }else if(probabilidade >= 70 && probabilidade < 90){
+   }else if(probabilidade >= 75 && probabilidade < 90){
       //2 FASE
       idPokemon2 = Math.floor(Math.random() * 3 + 1);
       segunda_fase();
-      pokemon.innerHTML = `<img src="assets/pokemon/${nomePokemon}.gif" style="width: 50px;">`;
+      pokemon.innerHTML = `<img src="assets/pokemon/respawn/${nomePokemon}.gif" style="width: 60px;">`;
 
    }else if(probabilidade >= 90 && probabilidade < 100){
       //3 FASE
       idPokemon3 = Math.floor(Math.random() * 3 + 1);
       terceira_fase();
-      pokemon.innerHTML = `<img src="assets/pokemon/${nomePokemon}.gif" style="width: 60px;">`;
+      pokemon.innerHTML = `<img src="assets/pokemon/respawn/${nomePokemon}.gif" style="width: 75px;">`;
 
    }else if(probabilidade == 100){
       //LENDARIO
    }
-
 }
 
 // Função para cronometrar o respawn dos pokémon
 function temporizador(){
+   var gif_loading = 'loading-timer';
+   
    setInterval(() => {
       sessionStorage.setItem('min', minuto)
       sessionStorage.setItem('seg', segundo);
-      if(minuto != 0 && segundo <= -1){
+      if(minuto != 0 && segundo < 0){
          segundo = 5;
          minuto = 0;
 
-      } else if(minuto == 0 && segundo <= -1){
-         brotarPokemon();
-
+      } else if(minuto == 0 && segundo < 0){
+         
          if(validar30s == 0){
-            setTimeout(() => {
-               probabilidade = Math.floor(Math.random() * 100 + 1);
-            }, 1500);
-            
-            console.log(probabilidade);
-            segundo = 5;
+            segundo = 8;
             minuto = 0;
-
             validar30s = 1;
+            gif_loading = 'procurar-timer';
+
+            probabilidade = Math.floor(Math.random() * (100 - 1) + 1);
+            sessionStorage.setItem('probabilidade', probabilidade);    
+            console.log(probabilidade);
 
             pokemonX = 0;
             pokemonY = 0;
             pokemon.innerHTML = ""
-            
+
+            sessionStorage.removeItem('idPoke');
+
          }else if(validar30s == 1){
             segundo = 5;
             minuto = 1;
             validar30s = 0;
-            // brotarPokemon();
+            gif_loading = 'loading-timer';
+            
+            brotarPokemon();
          }
       } else{
          var session_minuto = sessionStorage.getItem('min');
          var session_segundo = sessionStorage.getItem('seg');
 
          segundo --;
-         tempo.innerHTML = `Min: ${session_minuto} | Seg: ${session_segundo}`;
+         cronometro.innerHTML = `
+         <img src="../assets/icons/gif/${gif_loading}.gif">
+         <p>Min: ${session_minuto} | Seg: ${session_segundo}</p>`;
       }
    }, 1000);
-
 }
 
 // Função para alternar entre as fases de evolução
-
 function primeira_fase(){
    if(idPokemon1 == 1){
       nomePokemon = 'Bulbasaur';
