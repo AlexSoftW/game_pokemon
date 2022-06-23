@@ -45,43 +45,43 @@
 </html>
 <!-- <script src="js/pokemon.js"></script> -->
 <script>
-    var getPokemon = sessionStorage.getItem('idPoke');
-    var nomePokemon = '';
-    var getProbabilidade = sessionStorage.getItem('probabilidade');
     var alturaPokemon = 0;
+    var getNomePokemon = sessionStorage.getItem('nomePoke');
+    var getIdPokemon = sessionStorage.getItem('idPoke');
+    var getProbabilidade = sessionStorage.getItem('probabilidade');
 
    function validar_getPokemon(){
         validar_altura_pokemon();
 
-        if(getPokemon == 'Bulbasaur'){
-            nomePokemon = getPokemon;
+        if(getNomePokemon == 'Bulbasaur'){
+            nomePokemon = getNomePokemon;
 
-        }else if(getPokemon == 'Ivysaur'){
-            nomePokemon = getPokemon;
+        }else if(getNomePokemon == 'Ivysaur'){
+            nomePokemon = getNomePokemon;
 
-        }else if(getPokemon == 'Venusaur'){
-            nomePokemon = getPokemon;
+        }else if(getNomePokemon == 'Venusaur'){
+            nomePokemon = getNomePokemon;
 
-        }else if(getPokemon == 'Charmander'){
-            nomePokemon = getPokemon;
+        }else if(getNomePokemon == 'Charmander'){
+            nomePokemon = getNomePokemon;
 
-        }else if(getPokemon == 'Charmeleon'){
-            nomePokemon = getPokemon;
+        }else if(getNomePokemon == 'Charmeleon'){
+            nomePokemon = getNomePokemon;
 
-        }else if(getPokemon == 'Charizard'){
-            nomePokemon = getPokemon;
+        }else if(getNomePokemon == 'Charizard'){
+            nomePokemon = getNomePokemon;
 
-        }else if(getPokemon == 'Squirtle'){
-            nomePokemon = getPokemon;
+        }else if(getNomePokemon == 'Squirtle'){
+            nomePokemon = getNomePokemon;
 
-        }else if(getPokemon == 'Wartortle'){
-            nomePokemon = getPokemon;
+        }else if(getNomePokemon == 'Wartortle'){
+            nomePokemon = getNomePokemon;
 
-        }else if(getPokemon == 'Blastoise'){
-            nomePokemon = getPokemon;
+        }else if(getNomePokemon == 'Blastoise'){
+            nomePokemon = getNomePokemon;
         }
 
-        pokemon_game.innerHTML = `<img src="assets/pokemon/capturar/${nomePokemon}.gif" style="width:${alturaPokemon}%">`;
+        pokemon_game.innerHTML = `<img src="assets/pokemon/capturar/${getNomePokemon}.gif" style="width:${alturaPokemon}%">`;
         p_pokemon.innerHTML = nomePokemon;
    }
 

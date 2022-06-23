@@ -1,10 +1,11 @@
 // VARIAVEIS DO POKEMON
 var pokemonX = 0;
 var pokemonY = 0;
+var idPokemon = 0;
 var nomePokemon = '';
-var idPokemon1 = 0;
-var idPokemon2 = 0;
-var idPokemon3 = 0;
+var idFase1 = 0;
+var idFase2 = 0;
+var idFase3 = 0;
 var probabilidade = 0;
 
 //TEMPORIZADOR
@@ -54,19 +55,19 @@ function brotarPokemon(){
 
    if(probabilidade >= 1 && probabilidade < 75){
       //1 FASE
-      idPokemon1 = Math.floor(Math.random() * 3 + 1);
+      idFase1 = Math.floor(Math.random() * 3 + 1);
       primeira_fase();
       pokemon.innerHTML = `<img src="assets/pokemon/respawn/${nomePokemon}.gif" >`;
 
    }else if(probabilidade >= 75 && probabilidade < 90){
       //2 FASE
-      idPokemon2 = Math.floor(Math.random() * 3 + 1);
+      idFase2 = Math.floor(Math.random() * 3 + 1);
       segunda_fase();
       pokemon.innerHTML = `<img src="assets/pokemon/respawn/${nomePokemon}.gif" style="width: 60px;">`;
 
    }else if(probabilidade >= 90 && probabilidade < 100){
       //3 FASE
-      idPokemon3 = Math.floor(Math.random() * 3 + 1);
+      idFase3 = Math.floor(Math.random() * 3 + 1);
       terceira_fase();
       pokemon.innerHTML = `<img src="assets/pokemon/respawn/${nomePokemon}.gif" style="width: 75px;">`;
 
@@ -80,8 +81,8 @@ function temporizador(){
    var gif_loading = 'loading-timer';
    
    setInterval(() => {
-      sessionStorage.setItem('min', minuto)
-      sessionStorage.setItem('seg', segundo);
+      segundo --;
+
       if(minuto != 0 && segundo < 0){
          segundo = 5;
          minuto = 0;
@@ -103,6 +104,7 @@ function temporizador(){
             pokemon.innerHTML = ""
 
             sessionStorage.removeItem('idPoke');
+            sessionStorage.removeItem('nomePoke');
 
          }else if(validar30s == 1){
             segundo = 5;
@@ -113,64 +115,70 @@ function temporizador(){
             brotarPokemon();
          }
       } else{
-         var session_minuto = sessionStorage.getItem('min');
-         var session_segundo = sessionStorage.getItem('seg');
 
-         segundo --;
          cronometro.innerHTML = `
          <img src="../assets/icons/gif/${gif_loading}.gif">
-         <p>Min: ${session_minuto} | Seg: ${session_segundo}</p>`;
+         <p>Min: ${minuto} | Seg: ${segundo}</p>`;
       }
    }, 1000);
 }
 
 // Função para alternar entre as fases de evolução
 function primeira_fase(){
-   if(idPokemon1 == 1){
+   if(idFase1 == 1){
+      idPokemon = 1;
       nomePokemon = 'Bulbasaur';
-      sessionStorage.setItem('idPoke', nomePokemon);
+      sessionStorage.setItem('nomePoke', nomePokemon);
 
-   } else if(idPokemon1 == 2){
+   } else if(idFase1 == 2){
+      idPokemon = 4;
       nomePokemon = 'Charmander';
-      sessionStorage.setItem('idPoke', nomePokemon);
+      sessionStorage.setItem('nomePoke', nomePokemon);
 
-   } else if(idPokemon1 == 3){
+   } else if(idFase1 == 3){
+      idPokemon = 7;
       nomePokemon = 'Squirtle';
-      sessionStorage.setItem('idPoke', nomePokemon);
-
+      sessionStorage.setItem('nomePoke', nomePokemon);
    }
+   sessionStorage.setItem('idPoke', idPokemon);
 }
 
 function segunda_fase(){
-   if(idPokemon2 == 1){
+   if(idFase2 == 1){
+      idPokemon = 2;
       nomePokemon = 'Ivysaur';
-      sessionStorage.setItem('idPoke', nomePokemon);
+      sessionStorage.setItem('nomePoke', nomePokemon);
 
-   } else if(idPokemon2 == 2){
+   } else if(idFase2 == 2){
+      idPokemon = 5;
       nomePokemon = 'Charmeleon';
-      sessionStorage.setItem('idPoke', nomePokemon);
+      sessionStorage.setItem('nomePoke', nomePokemon);
 
-   } else if(idPokemon2 == 3){
+   } else if(idFase2 == 3){
+      idPokemon = 8;
       nomePokemon = 'Wartortle';
-      sessionStorage.setItem('idPoke', nomePokemon);
-
+      sessionStorage.setItem('nomePoke', nomePokemon);
    }
+   sessionStorage.setItem('idPoke', idPokemon);
 }
 
 function terceira_fase(){
-   if(idPokemon3 == 1){
+   if(idFase3 == 1){
+      idPokemon = 3;
       nomePokemon = 'Venusaur';
-      sessionStorage.setItem('idPoke', nomePokemon);
+      sessionStorage.setItem('nomePoke', nomePokemon);
 
-   } else if(idPokemon3 == 2){
+   } else if(idFase3 == 2){
+      idPokemon = 6;
       nomePokemon = 'Charizard';
-      sessionStorage.setItem('idPoke', nomePokemon);
+      sessionStorage.setItem('nomePoke', nomePokemon);
 
-   } else if(idPokemon3 == 3){
+   } else if(idFase3 == 3){
+      idPokemon = 9;
       nomePokemon = 'Blastoise';
-      sessionStorage.setItem('idPoke', nomePokemon);
-
+      sessionStorage.setItem('nomePoke', nomePokemon);
    }
+   sessionStorage.setItem('idPoke', idPokemon);
 }
 
 function lendario(){

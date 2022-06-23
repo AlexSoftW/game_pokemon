@@ -6,6 +6,7 @@ var eixoX, eixoY;
 
 // VARIAVEIS PARA VALIDAR SE O USUARIO TEM UMA BIKE OU NÃO!
 var bike;
+var bikeSelecionada = 0;
 var charEsquerda, charCima, charDireita, charBaixo;
 
 // VARIAVEIS DAS COORDENADAS DOS OBSTACULOS
@@ -36,19 +37,19 @@ function teclaUp() {
    if (tecla == 37) {
       eixoX = 0;
       pressEsq = 0
-      personagem.innerHTML = `<img src="assets/char/ash_esq.png">`
+      personagem.innerHTML = `<img src="assets/char/${charEsquerda}.png">`  
    } else if (tecla == 38) {
       eixoY = 0;
       pressUp = 0
-      personagem.innerHTML = `<img src="assets/char/ash_costas.png">`
+      personagem.innerHTML = `<img src="assets/char/${charCima}.png">`
    } else if (tecla == 39) {
       eixoX = 0;
       pressDir = 0
-      personagem.innerHTML = `<img src="assets/char/ash_dir.png">`
+      personagem.innerHTML = `<img src="assets/char/${charDireita}.png">`
    } else if (tecla == 40) {
       eixoY = 0;
       pressBaixo = 0;
-      personagem.innerHTML = `<img src="assets/char/ash_frente.png">`
+      personagem.innerHTML = `<img src="assets/char/${charBaixo}.png">`
    }
 }
 
@@ -110,9 +111,11 @@ function validar_esquerda(){
       positionX >= obs9Coor.x + 20 && positionX <= obs9Coor.x + 190 &&
       positionY >= obs9Coor.y - 5 && positionY <= obs9Coor.y + 150){
       eixoX = 0; 
+      personagem.innerHTML = `<img src="assets/char/${charEsquerda}.png">`
    }else{
       eixoX = -1;
-      personagem.innerHTML = `<img src="assets/char/ash_esquerda_gif.gif">`
+      //AQUI É O GIF
+      personagem.innerHTML = `<img src="assets/char/${charEsquerda}_gif.gif">`
    }
 }
 
@@ -124,10 +127,10 @@ function validar_cima(){
       positionX >= obs9Coor.x - 25 && positionX <= obs9Coor.x + 160 &&
       positionY >= obs9Coor.y + 20 && positionY <= obs9Coor.y + 160){
       eixoY = 0;
-      personagem.innerHTML = `<img src="assets/char/ash_costas.png">`
+      personagem.innerHTML = `<img src="assets/char/${charCima}.png">`
    }else{
       eixoY = -1;
-      personagem.innerHTML = `<img src="assets/char/ash_costas_gif.gif">`
+      personagem.innerHTML = `<img src="assets/char/${charCima}_gif.gif">`
    }
 }
 
@@ -140,10 +143,10 @@ function validar_direita(){
       positionX >= obs9Coor.x - 35 && positionX <= obs9Coor.x + 120 &&
       positionY >= obs9Coor.y - 20 && positionY <= obs9Coor.y + 150){
       eixoX = 0;
-      personagem.innerHTML = `<img src="assets/char/ash_dir.png">`
+      personagem.innerHTML = `<img src="assets/char/${charDireita}.png">`
    }else{
       eixoX = 1;
-      personagem.innerHTML = `<img src="assets/char/ash_direita_gif.gif">`
+      personagem.innerHTML = `<img src="assets/char/${charDireita}_gif.gif">`
    }
 }
 
@@ -156,32 +159,39 @@ function validar_baixo(){
       positionX >= obs9Coor.x - 20 && positionX <= obs9Coor.x + 160 &&
       positionY >= obs9Coor.y - 40 && positionY <= obs9Coor.y + 110){
       eixoY = 0;
-      personagem.innerHTML = `<img src="assets/char/ash_frente.png">`
+      personagem.innerHTML = `<img src="assets/char/${charBaixo}.png">`
    }else{
       eixoY = 1;
-      personagem.innerHTML = `<img src="assets/char/ash_frente_gif.gif">`
+      personagem.innerHTML = `<img src="assets/char/${charBaixo}_gif.gif">`
    }
 }
 
 // BIKE
 function bike_ash(){
    bike = document.getElementById('check_bike');
+  
+      if(bikeSelecionada == 1){
+         bike.checked = true;
+         bikeSelecionada = 0;
+         velocidade = 0.8;
 
-      if(bike.checked == true){
-         console.log('ativado')
-         charEsquerda = 'ash_bike_esq';
-         charCima = 'ash_bike_costas';
-         charDireita = 'ash_bike_dir';
-         charBaixo = 'ash_bike_frente';
+         charEsquerda = 'ash_esquerda_bike';
+         charCima = 'ash_costas_bike';
+         charDireita = 'ash_direita_bike';
+         charBaixo = 'ash_frente_bike';
+         personagem.innerHTML = `<img src="assets/char/ash_frente_bike.png">`;
       }else{
-         console.log('não ativado')
-         charEsquerda = 'ash_esq';
+         bike.checked = false;
+         bikeSelecionada = 1;
+         velocidade = 0.4;
+
+         charEsquerda = 'ash_esquerda';
          charCima = 'ash_costas';
-         charDireita = 'ash_dir';
+         charDireita = 'ash_direita';
          charBaixo = 'ash_frente';
+         personagem.innerHTML = `<img src="assets/char/ash_frente.png">`;
       }
 }
-
 
 // Após sair pela parte de baixo do mapa
 function voltar_home(){
