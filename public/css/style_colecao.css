@@ -1,103 +1,107 @@
-    /* Meio */
+/* LADO ESQUERDO */
+.group_card{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 15px;
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
+}
 
-.conteudo .main_page {
+.card{
+    cursor: pointer;
+    width: 165px;
+    height: 255px;
+    margin-top: 10px;
+    transition: all .3s ease-in-out;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+}
+.card:hover{
+    transform: scale(105%, 105%);
+}
+
+.qtd_cartas{
+    position: relative;
+    top: 55px;
+    text-align: center;
+    width: 43px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #2d2d2d7c;
+    color: white;
+}
+
+/* LADO DIREITO */
+.pokemon{
+    border-left: 1px solid black;
+}
+
+.grafico{
+    width: 100%;
+    height: 65%;
+}
+
+.group_button{
     display: flex;
     flex-direction: column;
-    width: 50%;
-    color: #2d2d2d;
- }
-
-.container_main_page .titulo{
-    height: 10%;
+    width: 100%;
+    height: 35%;
+}
+.btn_evoluir{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.container_main_page .cards{
-    height: 90%;
-    display: flex;
-    overflow: auto;
-    flex-wrap: wrap;
-}
-
-.cards .card{
-    margin-top: 20px;
-    margin-left: 10px;
-    width: 150px;
-    height: 210px;
-    cursor: pointer;
-}
-
-.card span{
-    z-index: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.cards .card:hover{
-    border: 2px solid black;
-}
-
-.cards .card img{
     width: 100%;
-    height: 90%;
+    height: 50%;
+}
+.btn_evoluir .info_evolucao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
 }
 
-.quantidade{
+.btn_evoluir button{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     width: 50%;
-    font-size: 14px;
-    margin: auto;
-    background-color: #2d2d2d;
-    color: white;
-    border-radius: 10px;
-    text-align: center;
+    height: 65%;
+    border-radius: 60px;
+    border: none;
+    filter: drop-shadow(5px 5px 5px #2d2d2da0);
+}
+.btn_evoluir button img{
+    width: 20%;
+    /* min-width: 50px; */
 }
 
-    /* Lado direito */
-
-.container .right {
-    border: 1px solid red;
+.btn_vender{
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    width: 40%;
-    background-size: cover;
- }
-
-.right .tabela_colecao{
-    border: 1px solid red;
-    height: 10%;
-    background-color: #335ac5;
-    color: white;
-    padding: 15px;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 50%;
 }
 
-.tabela_colecao tr{
+.btn_vender button{
     display: flex;
-    justify-content: space-around;
- }
-
- .tabela_colecao td{
-    width: 20%;
-    text-align: center;
- }
-
- .right .tabela_resultado{
-    border: 1px solid red;
-    height: 10%;
-    color: black;
-    padding: 15px;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 40%;
+    font-size: 20px;
+    border: none;
+    border-radius: 50px;
 }
-
-
-.tabela_resultado tr{
-    display: flex;
-    justify-content: space-around;
- }
-
- .tabela_resultado td{
-    width: 20%;
-    text-align: center;
- }
+.btn_vender button img{
+    width: 15%;
+}

@@ -199,6 +199,6 @@ function bike_ash(){
 function voltar_home(){
    if(positionX >= 310 && positionX <= 355 && positionY > 620){
       console.log('saiu')
-      window.location = '../treinador/home_treinador.html'
+      window.location = '../treinador/perfil.html'
    }
 }
