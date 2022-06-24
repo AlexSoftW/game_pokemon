@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="imagem/png" href="../assets/img/icons/pokeball.jpg" />
+      <link rel="stylesheet" href="../css/style_pagina_treinador.css" />
+      <link rel="stylesheet" href="../css/style_css_global.css">
+      <title>Bem-vindo Treinador</title>
+   </head>
+   <body>
+      <section id="main">
+         <div class="container">
+            <div class="conteudo">
+
+           <!-- Navbar lado esquerdo -->
+            <div class="navbar">
+               <div class="icons_pages">
+                  <div class="option_page focus_nav">
+                        <a href="home_treinador.html">
+                           <img src="../assets/icons/great_ball.png" />
+                           <p>Perfil</p>
+                        </a>
+                     </div>
+                  <div class="option_page">
+                     <hr />
+                     <a href="../game/game.html">
+                        <img src="../assets/icons/controle.png" />
+                        <p>PLAY!</p>
+                     </a>
+                     <hr />
+                  </div>
+                  <div class="option_page">
+                     <a href="colecao.html">
+                      <img src="../assets/icons/colecao.png" />
+                      <p>Coleção</p>
+                   </a>
+                   <hr />
+                </div>
+                  <div class="option_page">
+                   <a href="loja.html">
+                      <img src="../assets/icons/loja.png" />
+                      <p>Loja</p>
+                   </a>
+                   <hr />
+                </div>
+                <div class="option_page">
+                   <a href="marketplace.html">
+                      <img src="../assets/icons/marketplace.png" />
+                      <p>MarketPlace</p>
+                   </a>
+                   <hr />
+                </div>
+                <div class="option_page">
+                   <a href="./dados_globais.html">
+                      <img src="../assets/icons/world.png" />
+                      <p>Dados globais</p>
+                   </a>
+                </div>
+                  
+                  
+               </div>
+               <div class="sair">
+                  <hr />
+                  <button onclick="sair_sessao()">
+                     <img src="../assets/icons/sair.png" />
+                  </button>
+               </div>
+            </div>
+            
+               <div class="main_page">
+                  <div class="container_main_page">
+                     <div class="titulo">
+                        <h1>
+                           Seja bem-vindo
+                           <span id="span_nome_treinador"><!--NOME!--></span>
+                        </h1>
+                        <h3>Gerencie suas ultimas atividades!</h3>
+                        <hr />
+                     </div>
+                     <div class="atividades">
+                        <h3>
+                           Ultimo pokémon <span id="focus_text">capturado</span>
+                        </h3>
+                        <div class="card_atividade">
+                           <div class="card" id="card_img_pokemon">
+                              Pokémon
+                              <p id="nome_tag_pokemon">?</p>
+                           </div>
+                           <div class="card" id="card_type_pokemon">
+                              <p class="title_card" id="title_card">Tipo</p>
+                              ?
+                           </div>
+                           <div class="card" id="card_altura_pokemon">
+                              <p class="title_card">Altura</p>
+                              <p>?</p>
+                           </div>
+                           <div class="card" id="card_peso_pokemon">
+                              <p class="title_card">Peso</p>
+                              <p>?</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="info">
+                        <div class="title">
+                           <h3>
+                              Informações <span id="focus_text">Gerais</span>
+                           </h3>
+                        </div>
+                        <div class="info_group">
+                           <div class="card_status_pessoal">
+                              <div id="position">
+                                 <div class="treinador_pokemon" id="treinador_pokemon">
+                                    <!--FOTO!-->
+                                 </div>
+                              </div>
+                              <div class="title">
+                                 <h3 id="tag_name"><!--NOME!--></h3>
+                                 <p id="tag_sub_name"><!--SUB_NOME!--></p>
+                              </div>
+                              <div class="informacoes" id="informacoes"><!--GÊNERO!--></div>
+                              <div class="informacoes">
+                                 <p>Nacionalidade:</p>
+                                 <img src="../assets/icons/brasil.png" />
+                              </div>
+                              <div class="informacoes" id="poke_fav"><!--POKEMON FAVORITO!--></div>
+                           </div>
+                           <div class="card_professor">
+                              <div id="position">
+                                 <img src="../assets/treinador/carvalho.png"/>
+                              </div>
+                              <div class="title">
+                                 <h3>Profº Carvalho</h3>
+                                 <p>Professor Pokémon</p>
+                              </div>
+                              <div class="informacoes">
+                                 <p>Gênero:</p>
+                                 <img src="../assets/icons/masculino.png"/>
+                              </div>
+                              <div class="informacoes">
+                                 <p>Nacionalidade:</p>
+                                 <img src="../assets/icons/brasil.png" />
+                              </div>
+                              <div class="informacoes">
+                                 <p>Pokemon Fav:</p>
+                                 <img src="../assets/pokemon/porygon_pixel.png" />
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="pokemon">
+                  <div class="card" id="card">
+                     <!--INFO POKEMON!-->
+                  </div>
+                  <div class="poder" id="poder">                 
+                     <div class="atributo">
+                        <div class="status">
+                           <img src="../assets/icons/atk.png">
+                           <p>ATK</p>
+                        </div>
+                        <div class="barra_poder">
+                           <p class="barra_atk">10</p>
+                        </div>
+                     </div>
+                     <div class="atributo">
+                        <div class="status">
+                           <img src="../assets/icons/def.png">
+                           <p>DEF</p>
+                        </div>
+                        <div class="barra_poder">
+                           <p class="barra_def">10</p>
+                        </div>
+                     </div>
+                     <div class="atributo">
+                        <div class="status">
+                           <img src="../assets/icons/hp.png">
+                           <p>HP</p>
+                        </div>
+                        <div class="barra_poder">
+                           <p class="barra_hp">10</p>
+                        </div>
+                     </div>
+                     <div class="atributo">
+                        <div class="status">
+                           <img src="../assets/icons/speed.png">
+                           <p>SPD</p>
+                        </div>
+                        <div class="barra_poder">
+                           <p class="barra_spd">10</p>
+                        </div>
+                     </div>
+                     <!--STATUS POKEMON!-->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </body>
+</html>
+
+<script src="../js/home_treinador.js"></script>
+<script src="../js/funcoes.js"></script>

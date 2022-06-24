@@ -4,13 +4,234 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="imagem/png" href="assets/icons/pokeball.jpg" />
-      <link rel="stylesheet" href="css/style_index.css">
+      <link rel="icon" type="imagem/png" href="assets/icons/pixel_pokeball.jpg" />
+      <link rel="stylesheet" href="css/style_index.css" />
       <title>Página Inicial</title>
    </head>
    <body>
-      <h1>
-         <a href="treinador/index.html">Perfil do treinador</a>
-      </h1>
+      <div class="container">
+         <div id="navbar">
+            <ul>
+               <div class="nav_icons">
+                  <a href="#navbar">
+                     <img src="assets/icons/home.png" />
+                     <li style="color: white; font-weight: bolder">Home</li>
+                     <hr />
+                  </a>
+               </div>
+               <div class="nav_icons">
+                  <a href="#linha_tempo">
+                     <img src="assets/icons/linha_tempo.png" />
+                     <li>Linha do tempo</li>
+                  </a>
+               </div>
+               <div class="nav_icons">
+                  <a href="#sobre_page">
+                     <img src="assets/icons/about.png" />
+                     <li>Sobre</li>
+                  </a>
+               </div>
+               <div class="nav_icons">
+                  <a href="#footer">
+                     <img src="assets/icons/controller.png" />
+                     <li>START</li>
+                  </a>
+               </div>
+               <a href="login.html" class="btn_nav">Login</a>
+            </ul>
+         </div>
+      </div>
+      <section id="home_page">
+         <div class="image_main">
+            <img
+               src="assets/icons/logo_pokeball.png"
+               width="55px"
+               id="pokebola_icon"
+            />
+            <img src="assets/home/ash.png" id="ash_img" />
+         </div>
+         <div class="itens_main">
+            <div class="logo">
+               <img src="assets/icons/pokemon.webp" />
+            </div>
+            <div class="text">
+               <h1>Conheça minha jornada</h1>
+               <h1>Embarque em uma <span id="focus_text">aventura</span></h1>
+               <h1>E por fim capture quantos pokémon você conseguir</h1>
+               <h4>
+                  Interessado? venha fazer parte dessa equipe de treinadores!
+               </h4>
+               <a href="cadastro.html"><button>Cadastre-se</button></a>
+            </div>
+            <div class="more">
+               <a href="#linha_tempo"
+                  ><img src="assets/icons/seta-baixo.png"
+               /></a>
+            </div>
+         </div>
+      </section>
+      <section id="linha_tempo">
+         <div class="container">
+            <div class="tag">
+               <h1>LINHA DO <span id="focus_text">TEMPO</span></h1>
+               <hr />
+            </div>
+            <div class="group_cards">
+               <div class="cards">
+                  <img src="assets/home/pokegif1.gif" />
+                  <h1>??/??/????</h1>
+                  <p>
+                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+               <div class="cards">
+                  <img src="assets/home/pokegif2.gif" />
+                  <h1>??/??/????</h1>
+                  <p>
+                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+               <div class="cards">
+                  <img src="assets/home/pokegif3.gif" />
+                  <h1>??/??/????</h1>
+                  <p>
+                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+               <div class="cards">
+                  <img src="assets/home/pokegif4.gif" />
+                  <h1>??/??/????</h1>
+                  <p>
+                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+            </div>
+            <div class="trilha">
+               <img src="assets/home/linha.png" />
+            </div>
+            <div class="more">
+               <a href="#sobre_page"
+                  ><img src="assets/icons/seta-baixo.png"
+               /></a>
+            </div>
+         </div>
+      </section>
+      <section id="sobre_page">
+         <div class="container">
+            <div class="tag">
+               <h1>SOBRE <span id="focus_text">MIM</span></h1>
+               <hr />
+            </div>
+            <div class="card">
+               <img src="assets/home/infancia.jpg" />
+               <div class="card_text">
+                  <h1>TEMA</h1>
+                  <hr />
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+            </div>
+            <div class="card2">
+               <img src="assets/home/valores.jpg" />
+               <div class="card_text">
+                  <h1>VALORES</h1>
+                  <hr />
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+            </div>
+            <div class="card3">
+               <img src="assets/home/desafio.jpg" />
+               <div class="card_text">
+                  <h1>DESAFIO</h1>
+                  <hr />
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="nuvem"></div>
+      </section>
+      <section id="footer">
+         <div class="container">
+            <div class="tag">
+               <a href="#navbar"
+                  ><img src="assets/icons/seta-cima.png"
+               /></a>
+               <h1>PREPARADO PARA <span id="focus_text">COMEÇAR?</span></h1>
+               <hr />
+            </div>
+            <div class="group_itens_footer">
+               <div class="social_midia">
+                  <div class="title">
+                     <h1>Redes Sociais</h1>
+                     <hr />
+                  </div>
+                  <a
+                     href="https://www.linkedin.com/in/alex-silva-32a43620b/"
+                     class="rede_social">
+                     <img src="assets/icons/linkedin.png" />
+                     <p>Linkedin</p>
+                  </a>
+                  <hr />
+                  <a href="mailto:1alex.contato@gmail.com" class="rede_social">
+                     <img src="assets/icons/gmail.png" />
+                     <p>G-Mail</p>
+                  </a>
+                  <hr />
+                  <a href="https://github.com/AlexSoftW" class="rede_social">
+                     <img src="assets/icons/github.png" />
+                     <p>Github</p>
+                  </a>
+                  <hr />
+               </div>
+               <div class="get_started">
+                  <button>
+                     <a href="cadastro.html">INICIAR</a>
+                  </button>
+                  <img src="assets/home/pikachu_ash.gif" width="80%" />
+               </div>
+               <div class="servicos">
+                  <div class="title">
+                     <h1>Serviços</h1>
+                     <hr />
+                  </div>
+                  <a
+                     href="#navbar"
+                     class="icons_servico">
+                     <p>Home</p>
+                     <img src="assets/icons/home.png" />
+                  </a>
+                  <hr />
+                  <a href="#linha_tempo" class="icons_servico">
+                     <p>Linha do tempo</p>
+                     <img src="assets/icons/linha_tempo.png" />
+                  </a>
+                  <hr />
+                  <a href="#sobre_page" class="icons_servico">
+                     <p>Sobre</p>
+                     <img src="assets/icons/about.png" />
+                  </a>
+                  <hr />
+               </div>
+            </div>
+         </div>
+      </section>
+      <section id="last_footer">
+         <div class="text_1">
+            <p>Feito por um aluno SPTECH 💙🤍</p>
+         </div>
+         <div class="logo">
+            <img src="assets/icons/pokemon.webp" />
+         </div>
+         <div class="direitos_reservados">
+            <p>
+               Copyright © 2022. Alex Edinaldo Silva. Todos direitos reservados.
+            </p>
+         </div>
+      </section>
    </body>
 </html>

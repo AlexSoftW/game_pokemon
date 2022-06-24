@@ -21,18 +21,41 @@ a {
    color: black;
 }
 
-/* LOGO */
-.logo{
+/* HEADER */
+.header{
    position: absolute;
    display: flex;
-   justify-content: center;
-   align-items: center;
    top: 3px;
-   width: 93%;
+   min-width: 800px;
+   height: 45px;
 }
-.logo img{
-   width: 8%;
-   min-width: 100px;
+
+.header .itens{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 20%;
+   height: 100%;
+}
+.header .itens:first-child{
+   width: 15%;
+   border-right: 1px solid #2d2d2d35;
+}
+.header .itens:last-child{
+   width: 65%;
+   justify-content: flex-end;
+}
+.itens img{
+   width: 30px;
+   height: 30px;
+}
+.itens a{
+   cursor: pointer;
+   display: flex;
+   padding: 5px;
+   border: 1px solid rgba(0, 0, 0, 0.518);
+   border-radius: 5px;
+   background-color: rgba(245, 245, 245, 0.662);
 }
 
 /* GAME */
@@ -69,75 +92,9 @@ a {
    /* border: 1px solid black;
    background-color: red; */
    position: absolute;
-   /* top: 550px;
-   left: 120px; */
 }
 #pokemon img{
    width: 50px;
-}
-
-/* MENU(itens) */
-.main_itens{
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-   width: 10%;
-   min-width: 100px;
-   background-color: #b09386e9;
-   border: 2px solid #512f2de9;
-   border-radius: 4px;
-}
-
-.bag{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
-   height: 30%;
-}
-.bag img{
-   width: 70%;
-}
-.bag p{
-   font-size: 25px;
-   font-weight: bolder;
-}
-
-.itens{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
-   height: 15%;
-}
-.itens img{
-   width: 30%;
-}
-.itens button{
-   width: 90%;
-   background: none;
-   border: none;
-}
-
-.hr_focus{
-   height: 4px;
-   width: 80%;
-   border: none;
-   border-radius: 5px;
-   background: linear-gradient(to left, #b36b4a, #b6836b, #b29384);
-}
-
-.sair{
-   width: 100%;
-}
-.sair a{
-   cursor: pointer;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
 }
 
 /* TABELA */
@@ -163,6 +120,29 @@ a {
 .info_table td{
    text-align: center;
    width: 33%;
+}
+
+.bike{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   position: absolute;
+   top: 585px;
+   left: 795px;
+   width: 50px;
+   height: 70px;
+   /* border: 1px solid red; */
+}
+.bike #btn_bike{
+   cursor: pointer;
+   padding: 5px;
+   border-radius: 5px;
+   border: 1px solid #2d2d2d;
+   background: rgba(255, 255, 255, 0.778);
+}
+.bike #check_bike{
+   display: none;
 }
 
 /* TEMPORIZADOR */

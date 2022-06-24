@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Changa&display=swap");
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+}
+
+p{
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#focus_text {
+   background-image: linear-gradient(to bottom, steelblue, #43adde, turquoise);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   color: black;
+}
+
+#main {
+   display: flex;
+   background-image: url("../assets/background/waves2.svg");
+   background-size: cover;
+   width: 100%;
+   height: 100vh;
+   font-family: "Roboto", sans-serif;
+}
+
+.container {
+   display: flex;
+   width: 80%;
+   height: 80vh;
+   margin: auto;
+}
+
+.conteudo {
+   display: flex;
+   background-color: #f7f9fa;
+   display: flex;
+   width: 100%;
+   border-radius: 25px;
+   filter: drop-shadow(0 0 0.75rem #171717b4);
+}
+
+/* --------------------------------------------------------------------NAVBAR(LADOESQUERDO) */
+
+.conteudo .navbar {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 10%;
+   min-width: 110px;
+   background-color: #335ac5;
+   border-top-left-radius: 25px;
+   border-bottom-left-radius: 25px;
+}
+
+.navbar .icons_pages {
+   height: 80%;
+   margin-top: 25px;
+}
+
+.icons_pages .option_page {
+   /* border: 1px solid red; */
+   font-size: 16px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   height: 16%;
+   word-wrap: break-word;
+}
+
+
+.option_page.focus_nav {
+   border-right: 4px solid #43adde;
+}
+
+.option_page a {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   font-family: "Changa", sans-serif;
+}
+
+.option_page:first-child img {
+   width: 40%;
+   border-radius: 50%;
+}
+
+.option_page hr {
+   width: 50%;
+   border: none;
+   height: 3px;
+   background-color: rgba(245, 245, 245, 0.607);
+}
+
+.navbar .sair {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+   height: 20%;
+}
+.sair button{
+   cursor: pointer;
+   background:none;
+   border: none;
+}
+
+.sair hr {
+   width: 60%;
+   border: none;
+   border-radius: 5px;
+   height: 4px;
+   background-color: rgba(245, 245, 245, 0.607);
+}
+
+/* ------------------------------------------------------TELA PRINCIPAL(MEIO) */
+
+.conteudo .main_page {
+   display: flex;
+   flex-direction: column;
+   width: 60%;
+   color: #2d2d2d;
+}
+
+.main_page .container_main_page {
+   width: 80%;
+   height: 100%;
+   margin: auto;
+}
+
+
+/* ------------------------------------------------------CARD POKEMON ESCOLHIDO(LADO DIREITO) */
+
+.container .pokemon {
+   display: flex;
+   flex-direction: column;
+   width: 30%;
+   background-size: cover;
+}
+

@@ -1,0 +1,103 @@
+    /* Meio */
+
+.conteudo .main_page {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    color: #2d2d2d;
+ }
+
+.container_main_page .titulo{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_main_page .cards{
+    height: 90%;
+    display: flex;
+    overflow: auto;
+    flex-wrap: wrap;
+}
+
+.cards .card{
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 150px;
+    height: 210px;
+    cursor: pointer;
+}
+
+.card span{
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cards .card:hover{
+    border: 2px solid black;
+}
+
+.cards .card img{
+    width: 100%;
+    height: 90%;
+}
+
+.quantidade{
+    width: 50%;
+    font-size: 14px;
+    margin: auto;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+    /* Lado direito */
+
+.container .right {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background-size: cover;
+ }
+
+.right .tabela_colecao{
+    border: 1px solid red;
+    height: 10%;
+    background-color: #335ac5;
+    color: white;
+    padding: 15px;
+    width: 100%;
+}
+
+.tabela_colecao tr{
+    display: flex;
+    justify-content: space-around;
+ }
+
+ .tabela_colecao td{
+    width: 20%;
+    text-align: center;
+ }
+
+ .right .tabela_resultado{
+    border: 1px solid red;
+    height: 10%;
+    color: black;
+    padding: 15px;
+    width: 100%;
+}
+
+
+.tabela_resultado tr{
+    display: flex;
+    justify-content: space-around;
+ }
+
+ .tabela_resultado td{
+    width: 20%;
+    text-align: center;
+ }

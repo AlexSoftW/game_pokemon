@@ -180,6 +180,7 @@ function bike_ash(){
          charDireita = 'ash_direita_bike';
          charBaixo = 'ash_frente_bike';
          personagem.innerHTML = `<img src="assets/char/ash_frente_bike.png">`;
+         btn_bike.style.backgroundColor = 'rgba(144, 253, 114, 0.778)';
       }else{
          bike.checked = false;
          bikeSelecionada = 1;
@@ -190,6 +191,7 @@ function bike_ash(){
          charDireita = 'ash_direita';
          charBaixo = 'ash_frente';
          personagem.innerHTML = `<img src="assets/char/ash_frente.png">`;
+         btn_bike.style.backgroundColor = 'rgba(255, 255, 255, 0.778)';
       }
 }
 
@@ -197,6 +199,6 @@ function bike_ash(){
 function voltar_home(){
    if(positionX >= 310 && positionX <= 355 && positionY > 620){
       console.log('saiu')
-      window.location = '../treinador/index.html'
+      window.location = '../treinador/home_treinador.html'
    }
 }

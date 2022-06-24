@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="imagem/png" href="../assets/img/icons/pokeball.jpg" />
+      <link rel="stylesheet" href="../css/style_pagina_treinador.css" />
+      <link rel="stylesheet" href="../css/style_css_global.css">
+      <title>Bem-vindo Treinador</title>
+   </head>
+   <body>
+      <section id="main">
+         <div class="container">
+            <div class="conteudo">
+
+           <!-- Navbar lado esquerdo -->
+            <div class="navbar">
+               <div class="icons_pages">
+                  <div class="option_page focus_nav">
+                        <a href="home_treinador.html">
+                           <img src="../assets/icons/great_ball.png" />
+                           <p>Perfil</p>
+                        </a>
+                     </div>
+                  <div class="option_page">
+                     <hr />
+                     <a href="../game/game.html">
+                        <img src="../assets/icons/controle.png" />
+                        <p>PLAY!</p>
+                     </a>
+                     <hr />
+                  </div>
+                  <div class="option_page">
+                     <a href="colecao.html">
+                      <img src="../assets/icons/colecao.png" />
+                      <p>Coleção</p>
+                   </a>
+                   <hr />
+                </div>
+                  <div class="option_page">
+                   <a href="loja.html">
+                      <img src="../assets/icons/loja.png" />
+                      <p>Loja</p>
+                   </a>
+                   <hr />
+                </div>
+                <div class="option_page">
+                   <a href="marketplace.html">
+                      <img src="../assets/icons/marketplace.png" />
+                      <p>MarketPlace</p>
+                   </a>
+                   <hr />
+                </div>
+                <div class="option_page">
+                   <a href="./dados_globais.html">
+                      <img src="../assets/icons/world.png" />
+                      <p>Dados globais</p>
+                   </a>
+                </div>
+                  
+                  
+               </div>
+               <div class="sair">
+                  <hr />
+                  <button onclick="sair_sessao()">
+                     <img src="../assets/icons/sair.png" />
+                  </button>
+               </div>
+            </div>
+               <div class="more_information">
+                  <div class="group_title">
+                     <div class="box_img">
+                        <img src="../assets/icons/world_rotate.gif">
+                     </div>
+                     <h1>Dados <span id="focus_text">globais</span></h1>
+                  </div>               
+                  <div class="group_card">
+                      <h3>Maior taxa de captura</h3>
+                      <div class="grafico_char">
+                        <div class="medalha">
+                           <img src="../assets/icons/medalha.png">
+                        </div>
+                        <div class="char" id="card_global_char">
+                           <p>?</p>
+                        </div>
+                        <div class="group_information">
+                           <div class="name" id="card_global_name">
+                              <p>?</p>
+                              <hr>
+                           </div>                            
+                           <div class="group_status">  
+                              <div class="qtd" id="card_global_qtd">
+                                 <h1>?</h1>
+                              </div>                             
+                              <div class="poke_capturados">
+                                 <p>Pokémons</p>
+                                 <p>capturados</p>
+                              </div>                            
+                           </div>
+                        </div> 
+                      </div>
+                  </div>  
+               </div>
+               <div class="dados_globais"> 
+                  <table class="tabela_global_title">
+                     <tr>
+                        <td>Treinador</td>
+                        <td>Data Tentativa</td>
+                        <td>Pokémon</td>
+                        <td>Status</td>
+                     </tr>
+                  </table>               
+                  <table id="tabela">                    
+                  </table>
+               </div>
+            </div>
+         </div>
+      </section>
+   </body>
+</html>
+
+<script src="../js/home_treinador.js"></script>
+
