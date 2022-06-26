@@ -129,9 +129,17 @@
 }
 
 .bag{
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: 70%;
     border: 1px solid red;
+}
+
+.bag .item{
+    border: 1px solid blue;
+    width: 100%;
+    height: 20%;
 }
 
 .sair{

@@ -7,7 +7,7 @@
     <link rel="icon" type="imagem/png" href="../assets/icons/pixel_pokeball.jpg" />
     <link rel="stylesheet" href="../css/style_css_global.css">
     <link rel="stylesheet" href="../css/style_colecao.css">
-    <title>Template</title>
+    <title>Pokémon | Coleção</title>
 </head>
 <body>
     <section id="main">
@@ -136,69 +136,10 @@
 
               <!-- Lado direito do conteudo -->
               <div class="pokemon">
-               <div class="grafico">
-                  <canvas id="myChart"></canvas>
-               </div>
-               <div class="group_button">
-                  <div class="btn_evoluir">
-                     <p class="info_evolucao">
-                        <img src="../assets/icons/flash-card.png">
-                        3x ->
-                     </p>
-                     <button>
-                        <img src="../game/assets/pokemon/btn/Charmander.png">
-                        <img src="../assets/icons/3pontinhos.png">
-                        <img src="../game/assets/pokemon/btn/Charmeleon.png">
-                     </button>
-                     <p class="info_evolucao">
-                        = 1x
-                        <img src="../assets/icons/flash-card.png">
-                     </p>
-                  </div>
-                  <div class="btn_vender">
-                     <h3>Vender</h3>
-                     <button>
-                        <img src="../assets/icons/coin.png">
-                        <p>0.5K</p>
-                     </button>
-                  </div>
-               </div>
+               
               </div>
            </div>
         </div>
      </section>
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-  const data = {
-  labels: [
-    'ATK',
-    'DEF',
-    'HP',
-    'SPD'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [40, 30, 30, 40],
-    backgroundColor: [
-      'rgb(255, 205, 86)',
-      'rgb(75, 192, 192)',
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)'
-    ]
-  }]
-};
-
-const config = {
-  type: 'polarArea',
-  data: data,
-  options: {}
-};
-
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-</script>
