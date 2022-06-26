@@ -39,7 +39,7 @@
     flex-direction: column;
     width: 100%;
     height: 80%;
-    background-image: url('../assets/maps/main_map_catch.png');
+    /* background-color: black; */
     background-size: cover;
     /* border: 1px solid blue; */
 }

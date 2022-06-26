@@ -7,6 +7,7 @@ var idFase1 = 0;
 var idFase2 = 0;
 var idFase3 = 0;
 var probabilidade = 0;
+var encostou = 0;
 
 //TEMPORIZADOR
 var minuto = 1;
@@ -18,9 +19,13 @@ function verificarColisao() {
    var validar_eixoX = positionX > pokemonX - 30 && positionX < pokemonX + 30;
    var validar_eixoY = positionY > pokemonY - 30 && positionY < pokemonY + 30;
 
-   if (validar_eixoX && validar_eixoY) {
-      window.location = "capturar.html"
-      console.log("!!!!Encostou!!!!");
+   if (validar_eixoX && validar_eixoY) { 
+      encostou = 1;
+      if(encostou == 1){
+         animation();
+      }else{
+         //não encostou!
+      }
    }
 }
 
@@ -185,6 +190,27 @@ function lendario(){
 // aqui vai ficar o id do MEW!!
 }
 
+function animation(){ 
+   var url_img = 'url("assets/animation/transition1.gif")';
+   document.getElementById('map').style.backgroundImage = url_img;
+
+   setTimeout(() => {
+      var url_musica_tema = '<source src="assets/audio/Battle-Music-pt1.mp3" type="audio/mp3">'
+      document.getElementById('audio_theme').innerHTML = url_musica_tema;
+      cronometro.style.display = "none";
+      btn_bike.style.display = "none";
+   }, 100);
+
+   setTimeout(() => {
+      pokemon.style.display = "none";
+      personagem.style.display = "none";
+   }, 1500);
+
+   setTimeout(() => {
+      window.location = "capturar.html"
+      // console.log("!!!!Encostou!!!!");
+   }, 1800);
+}
 
 
 

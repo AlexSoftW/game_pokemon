@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="css/capturar.css">
     <title>Capturar</title>
 </head>
-<body onload="validar_getPokemon()">
+<body onload="validar_getPokemon(), animation2()">
     <section class="main">
         <div class="group_container">
             <div class="container_1">
-                <div class="map">
-                    <div class="status">
+                <div class="map" id="map_capture">
+                    <audio autoplay id="audio_battle">
+                        <!-- <source src="assets/audio/Battle-Music-pt2.mp3" type="audio/mp3"> -->
+                    </audio>
+                    <div class="status" id="status_game">
                         <img src="../assets/icons/pixel_pokeball.jpg" class="img_pokeball">
                         <p id="p_pokemon"></p>
                         <img src="assets/maps/status.png">
                     </div>
-                    <div class="base">
+                    <div class="base" id="base_game">
                         <img src="assets/maps/base.png">
                     </div>
 
@@ -26,7 +29,7 @@
                     </div>
 
                     <div id="treinador_game">
-                        <img src="../assets/treinador/boy_game.png">
+                        <!-- <img src="../assets/treinador/boy_game.png"> -->
                     </div>
                     <div id="pokemon_game">
                         <!-- <img src="assets/pokemon/Pikachu.gif"> -->
@@ -91,9 +94,6 @@
         }else if(getNomePokemon == 'Blastoise'){
             nomePokemon = getNomePokemon;
         }
-
-        pokemon_game.innerHTML = `<img src="assets/pokemon/capturar/${getNomePokemon}.gif" style="width:${alturaPokemon}%">`;
-        p_pokemon.innerHTML = nomePokemon;
    }
 
    function sair_game(){
@@ -111,4 +111,24 @@
         }
    }
     
+   function animation2(){
+    var url_map_static = `url('assets/maps/main_map_catch.png')`;
+    var url_map_gif = `url('assets/animation/transition2.gif')`;
+
+    setTimeout(() => {
+        status_game.style.display = "none";
+        base_game.style.display = "none";
+        map_capture.style.backgroundImage = url_map_gif
+        audio_battle.innerHTML = `<source src="assets/audio/Battle-Music-pt2.mp3" type="audio/mp3">`;
+    }, 100);
+    
+    setTimeout(() => {
+        map_capture.style.backgroundImage = url_map_static;
+        status_game.style.display = "flex";
+        base_game.style.display = "flex";
+        treinador_game.innerHTML = `<img src="../assets/treinador/boy_game.png">`;
+        pokemon_game.innerHTML = `<img src="assets/pokemon/capturar/${getNomePokemon}.gif" style="width:${alturaPokemon}%">`;
+        p_pokemon.innerHTML = nomePokemon;
+    }, 1000);
+   }
 </script>
