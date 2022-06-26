@@ -1,7 +1,105 @@
-.container_main_page{
-    border: 1px solid red;
- }
- 
- .pokemon{
-    border: 1px solid blue;
- }
+   /* Meio container */
+.container_main_page .market{
+   height: 80%;
+}
+
+      /* Titulo azul na tabela */
+.market .group_title_market {
+   height: 10%;
+   background-color: #335ac5;
+   color: white;
+   padding: 15px;
+   width: 100%;
+}
+
+.group_title_market tr{
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+}
+
+ .group_title_market td{
+   width: 20%;
+   text-align: center;
+}
+
+      /* todos dos dados da tabela */
+.market .group_market{
+   height: 89%;
+   overflow: auto;
+}
+
+
+.market .resultado_market {
+   height: 60px;
+   padding: 15px;
+   width: 100%;
+}
+  
+.resultado_market tr{
+   display: flex;
+   justify-content: space-around;
+}
+
+ .resultado_market td{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 20%;
+   text-align: center;
+}
+
+.resultado_market .pokemon{
+   border:1px solid red;
+   display: flex;
+   flex-direction: column;
+   font-size: 14px;
+}
+
+
+ /* Lado direito container */
+
+.pokemon .card_pokemon{
+   background-color: aliceblue;
+   height: 80%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.card_pokemon .detalhes{
+   height: 90%;
+}
+
+.card_pokemon img{
+   width: 100%;
+   height: 100%;
+}
+
+.pokemon .group_button{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: aliceblue;
+   height: 20%;
+}
+
+.group_button button{
+   width: 150px;
+   height: 35px;
+   margin: 10px;
+   font-size: 18px;
+   border: none;
+   border-radius: 5px;
+   background-color: #715DF2;
+   color: white;
+   letter-spacing: 1px;
+   cursor: pointer;
+   align-self: center;
+   transition: all .3s ease-in-out;
+}
+
+.group_button button:hover{
+   background-color: #614af5;
+   letter-spacing: 2px;
+}
